@@ -1,0 +1,393 @@
+/* =========================================================
+   Letícia Dala — Psicóloga e Psicanalista
+   Landing page estática (recriação fiel do site Elementor)
+   Paleta original:
+     bege principal .... #D2B49C
+     creme (faixa) ..... #FFF2E7
+     destaque .......... #AF9683
+     rosa (gradiente) .. #E9D4D9
+   Fonte: Lato
+   ========================================================= */
+
+:root {
+  --bege: #D2B49C;
+  --creme: #FFF2E7;
+  --destaque: #AF9683;
+  --rosa: #E9D4D9;
+  --branco: #FFFFFF;
+  --max-width: 1140px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+/* compensa o header fixo ao rolar até as âncoras */
+:target { scroll-margin-top: 96px; }
+
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  color: var(--bege);
+  background-color: var(--branco);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+p { margin: 0 0 4px; }
+
+/* Container central (igual ao boxed do Elementor: 1140px) */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+/* ===================== HEADER ===================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--bege);
+}
+.header__inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 11vh;
+  padding-block: 8px;
+}
+
+.header__logo { flex: 0 0 auto; line-height: 0; }
+.header__logo img { height: 7vh; width: auto; max-height: 56px; }
+
+.header__nav { margin-left: auto; }
+.header__nav ul {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.header__nav a {
+  display: block;
+  padding: 12px 23px;
+  font-family: "Lato", sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--branco);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+.header__nav a:hover,
+.header__nav a:focus { opacity: 0.75; }
+
+.header__wpp {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--branco);
+  border-radius: 6px;
+  color: var(--branco);
+  transition: box-shadow 0.3s ease;
+}
+.header__wpp svg { width: 24px; height: 24px; fill: currentColor; }
+.header__wpp:hover { box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.35); }
+
+/* Hamburguer (escondido no desktop) */
+.nav-toggle { display: none; }
+.nav-burger { display: none; cursor: pointer; padding: 8px; margin-left: auto; }
+.nav-burger svg { width: 28px; height: 28px; fill: var(--branco); display: block; }
+
+/* ===================== BOTÕES ===================== */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--branco);
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  transition: all 1s ease;
+}
+
+/* Botão grande do hero: gradiente bege -> rosa */
+.btn--hero {
+  align-self: flex-start;
+  margin-top: 12px;
+  padding: 16px 34px;
+  font-size: 34px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+  word-spacing: 6px;
+  text-shadow: 0 0 9px rgba(0, 0, 0, 0.3);
+  color: var(--branco);
+  background-color: var(--bege);
+  background-image: linear-gradient(338deg, var(--bege) 0%, var(--rosa) 100%);
+  box-shadow: 0 0 6px 0 #BBBBBB;
+}
+.btn--hero:hover,
+.btn--hero:focus { color: var(--branco); box-shadow: 0 0 6px 0 #BBBBBB; filter: brightness(1.03); }
+
+/* Botão da seção CTA */
+.btn--cta {
+  width: 70%;
+  align-self: center;
+  margin-top: 16px;
+  padding: 14px 24px;
+  font-size: 23px;
+  font-weight: 500;
+  text-shadow: 0 0 9px rgba(0, 0, 0, 0.3);
+  background-color: var(--bege);
+  box-shadow: 0 0 6px 0 #BBBBBB;
+}
+.btn--cta:hover,
+.btn--cta:focus { box-shadow: 0 0 6px 0 #BBBBBB; filter: brightness(1.03); }
+
+/* ===================== HERO ===================== */
+.hero__inner {
+  display: flex;
+  flex-direction: column;
+  min-height: 79vh;
+  gap: 0;
+}
+
+.hero__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero__title {
+  font-family: "Lato", sans-serif;
+  font-size: 35px;
+  font-weight: 400;
+  color: var(--bege);
+  margin: 0 0 16px;
+  line-height: 1.2;
+}
+.hero__title strong { font-weight: 700; }
+
+.hero__intro {
+  font-size: 19px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.hero__image { display: flex; justify-content: center; }
+.hero__image img {
+  width: 100%;
+  margin-top: 19%;
+  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* ===================== DIVISÓRIA ===================== */
+.divider {
+  border: none;
+  border-top: 6.3px solid var(--bege);
+  width: 100%;
+  margin: 15px 0;
+}
+.divider--bottom { margin-top: 25px; }
+
+/* ===================== LOGO ===================== */
+.logo-row { display: flex; justify-content: center; }
+.logo-row__img { width: 23%; }
+
+/* ===================== SOBRE ===================== */
+.about { text-align: center; padding-block: 8px; }
+.about__title {
+  font-family: "Lato", sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--bege);
+  margin: 0 0 16px;
+}
+.about__text {
+  font-size: 17px;
+  font-weight: 400;
+}
+
+/* ===================== FAIXA DESTAQUE ===================== */
+.highlight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 182px;
+  background-color: var(--creme);
+  padding: 24px 16px;
+  margin-block: 24px;
+}
+.highlight__text {
+  max-width: var(--max-width);
+  margin: 0;
+  text-align: center;
+  font-size: 29px;
+  font-weight: 400;
+  color: var(--destaque);
+}
+
+/* ===================== CTA + BIO ===================== */
+.cta {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 3%;
+}
+
+.cta__left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cta__photo {
+  width: 100%;
+  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.5);
+}
+
+.cta__right { display: flex; flex-direction: column; }
+.cta__logo { width: 74%; margin: 0 auto 12px; }
+.cta__bio {
+  text-align: center;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+/* ===================== FOOTER ===================== */
+.site-footer { padding: 32px 0 24px; }
+
+.footer__top { text-align: center; }
+.footer__title {
+  font-family: "Lato", sans-serif;
+  font-size: 35px;
+  font-weight: 600;
+  color: var(--bege);
+  margin: 0 0 12px;
+}
+.footer__sub {
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--bege);
+  margin: 0;
+}
+
+.footer__cols {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.footer__contato-title {
+  font-family: "Lato", sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--bege);
+  margin: 0 0 12px;
+  text-align: center;
+}
+
+.contato-list { list-style: none; margin: 0; padding: 0; }
+.contato-list li { margin: 5px 0; }
+.contato-list a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  font-family: "Lato", sans-serif;
+  font-size: 17px;
+  color: var(--bege);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+.contato-list a:hover { opacity: 0.75; }
+.contato-list svg { width: 20px; height: 20px; fill: var(--bege); flex: 0 0 auto; }
+
+.footer__cta { display: flex; justify-content: center; align-items: center; }
+.btn--footer {
+  width: 279px;
+  max-width: 100%;
+  padding: 14px 24px;
+  font-size: 29px;
+  font-weight: 500;
+  background-color: var(--bege);
+  box-shadow: 0 0 6px 0 #BBBBBB;
+}
+.btn--footer:hover,
+.btn--footer:focus { box-shadow: 0 0 6px 0 #BBBBBB; filter: brightness(1.03); }
+
+.footer__copy {
+  text-align: center;
+  color: var(--bege);
+  font-size: 15px;
+  margin: 36px 0 0;
+}
+
+/* =========================================================
+   RESPONSIVO — mesmos breakpoints do Elementor
+   ========================================================= */
+
+/* Menu mobile (hamburguer) até 1024px */
+@media (max-width: 1024px) {
+  .nav-burger { display: block; }
+  .header__wpp { order: 2; }
+  .nav-burger { order: 3; margin-left: 0; }
+  .header__nav { order: 4; margin-left: 0; }
+
+  .header__nav {
+    flex-basis: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .nav-toggle:checked ~ .header__nav { max-height: 320px; }
+  .header__nav ul { flex-direction: column; align-items: stretch; gap: 0; }
+  .header__nav a { text-align: center; }
+  .header__inner { flex-wrap: wrap; }
+  .header__logo { margin-right: auto; }
+}
+
+/* Tablet/desktop: hero e CTA viram duas colunas (>=768px) */
+@media (min-width: 768px) {
+  .hero__inner { flex-direction: row; }
+  .hero__text  { width: 50%; }
+  .hero__image { width: 50%; }
+
+  .cta { flex-direction: row; }
+  .cta__left  { width: 46.488%; }
+  .cta__right { width: 50%; justify-content: center; }
+
+  .cta__photo { width: 70%; }
+
+  .footer__cols { flex-direction: row; align-items: center; }
+  .footer__contato { width: 50%; }
+  .footer__cta { width: 50%; }
+  .btn--footer { width: 56%; }
+}
+
+/* Desktop grande (>1024px): hero alinhado à esquerda e imagens menores */
+@media (min-width: 1025px) {
+  .hero__text  { text-align: left; }
+  .hero__title { font-size: 48px; }
+  .btn--hero   { align-self: flex-start; }
+
+  .hero__image img { width: 79%; margin-top: 7%; }
+
+  .about__title { font-size: 48px; }
+  .about__text  { font-size: 25px; }
+
+  .logo-row__img { width: 7%; }
+
+  .highlight__text { font-size: 34px; }
+
+  .cta__bio { text-align: justify; font-size: 21px; }
+}
