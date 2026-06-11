@@ -183,9 +183,11 @@ p { margin: 0 0 4px; }
   margin-bottom: 8px;
 }
 
-.hero__image { display: flex; justify-content: center; }
+.hero__image { display: flex; justify-content: center; align-items: flex-start; }
 .hero__image img {
   width: 100%;
+  height: auto;          /* mantém a proporção original (evita esticar na vertical) */
+  align-self: flex-start;
   margin-top: 19%;
   box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.5);
 }
