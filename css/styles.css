@@ -156,7 +156,6 @@ p { margin: 0 0 4px; }
 .hero__inner {
   display: flex;
   flex-direction: column;
-  min-height: 79vh;
   gap: 0;
 }
 
@@ -169,7 +168,7 @@ p { margin: 0 0 4px; }
 
 .hero__title {
   font-family: "Lato", sans-serif;
-  font-size: 35px;
+  font-size: 40px;          /* mobile */
   font-weight: 400;
   color: var(--bege);
   margin: 0 0 16px;
@@ -183,12 +182,13 @@ p { margin: 0 0 4px; }
   margin-bottom: 8px;
 }
 
-.hero__image { display: flex; justify-content: center; align-items: flex-start; }
+/* No celular a FOTO vem primeiro (order -1); no desktop volta ao normal */
+.hero__image { display: flex; justify-content: center; align-items: flex-start; order: -1; }
 .hero__image img {
   width: 100%;
   height: auto;          /* mantém a proporção original (evita esticar na vertical) */
   align-self: flex-start;
-  margin-top: 19%;
+  margin: 4px 0 24px;
   box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.5);
 }
 
@@ -360,9 +360,10 @@ p { margin: 0 0 4px; }
 
 /* Tablet/desktop: hero e CTA viram duas colunas (>=768px) */
 @media (min-width: 768px) {
-  .hero__inner { flex-direction: row; }
+  .hero__inner { flex-direction: row; min-height: 79vh; }
   .hero__text  { width: 50%; }
-  .hero__image { width: 50%; }
+  .hero__image { width: 50%; order: 0; }
+  .hero__image img { margin: 19% 0 0; }
 
   .cta { flex-direction: row; }
   .cta__left  { width: 46.488%; }
